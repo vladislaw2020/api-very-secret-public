@@ -1,0 +1,187 @@
+@import url(//fonts.googleapis.com/css?family=Consolas);
+@font-face {
+	font-family: "Hack";  
+	src: url("font/Hack.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal;
+}
+
+body{
+	background: #494949;
+	margin: 0;
+}
+
+/* Header */
+header{
+	width: 100%;
+	height: 55px;
+	background: #333;
+}
+
+header a{
+	position: relative;
+	margin-left: 30px;
+	top: 11px;
+	float: left;
+	text-decoration: none;
+	color: white;
+	font-size: 26px;
+	font-style: italic;
+	font-family: 'Consolas';
+}
+
+.pal{
+	position: absolute;
+	margin-left: 210px;
+	float: left;
+	top: -29px;
+	font-family: 'Hack';
+	font-style: italic;
+	font-size: 35px;
+	color: #f63e3e;
+}
+
+.header_text{
+	position: absolute;
+	top: -1px;
+	margin-left: 260px;
+	color: white;
+	font-size: 18px;
+	font-family: 'Hack';
+}
+
+#about_button {
+	position: absolute;
+	right: 22px;
+	color: #fff4e0;
+	font-family: 'Hack';
+	font-size: 16px;
+	top: 1px;
+	cursor: pointer;
+	user-select: none;
+}
+
+
+/* Content */
+#about{
+	position: absolute;
+	margin-top: 10%;
+	margin-left: 35%;
+	width: 310px;
+	height: 270px;
+	background: #333;
+	border: 1.5px solid white;
+	box-shadow: 0 0 18px #000;
+	border-radius: 4px;
+	font-family: 'Consolas';
+	z-index: 10;
+}
+
+#about h2{
+	color: white;
+	text-align: center;
+}
+
+.about_text{
+	margin-left: 7px;
+	color: white;
+}
+
+.about_close{
+	position: absolute;
+	right: 20px;
+	top: 0px;
+	color: #f63e3e;
+	font-size: 20px;
+	font-family: 'Hack';
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+}
+
+
+/* Send form */
+
+.send_form{
+	position: relative;
+	margin-top: 90px;
+	margin-left: 0px;
+	width: 300px;
+	border-top: 2.5px solid #f63e3e;
+}
+
+.send_form h2{
+	color: white;
+	font-family: 'Consolas';
+	font-size: 23px;
+	text-align: center;
+}
+
+.name_input{
+	margin-left: 50px;
+	width: 200px;
+	height: 20px;
+	text-align: center;
+	border-left: 2px solid #f63e3e;
+	border-right: 2px solid #f63e3e;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #333;
+	color: white;
+	font-family: 'Hack';
+}
+
+.text_input{
+	margin-left: 50px;
+	width: 200px;
+	border-left: 2px solid #f63e3e;
+	border-right: 2px solid #f63e3e;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #333;
+	color: white;
+	font-family: 'Hack';
+}
+
+.send_button{
+	margin-left: 100px;
+	margin-top: 18px;
+	width: 100px;
+	border: 2px solid #f63e3e;
+	background: #333;
+	color: white;
+	font-family: 'Consolas';
+	font-size: 18px;
+	border-radius: 5px;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.send_button:hover{
+	background: #f63e3e;
+	color: black;
+}
+
+
+/* Animation */
+#animation{
+	position: absolute;
+	margin-left: 870px;
+	margin-top: 300px;
+	font-size: 25px;
+	user-select: none;
+	z-index: 1;
+	cursor: crosshair;
+	animation-name: car;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes car {
+	0% {margin-left: 870px;}
+	30% {margin-left: 600px;}
+	50% {margin-top: 150px;}
+	80% {margin-left: 200px;}
+	100% {margin-left: 0px;}
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Msg send</title>
+		<!---CSS--->
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+
+
+<script src = "/socket.io/socket.io.js"></script>
+<script>
+	var socket = io();
+	function send(){
+	let msg = document.dsend.msg.value;
+	let uname = document.dsend.username.value;
+	let error = false;
+	socket.emit('uname', uname);
+	socket.emit('msg', msg);
+	socket.emit('send', 'send');
+	socket.on('error', function(data){
+		if(!error){
+			alert("Error! Can't send message.");
+			error = true;
+		}
+		return;
+	});
+	socket.on('msgempty', function(data){
+		if(!error){
+			alert("Error! Message is empty.");
+			error = true;
+		}
+		return;
+	});
+	}
+</script>
+
+
+<!--For about button-->
+<script>
+	let stats = 0;
+	function aboutClick(){
+		if (stats == 0){
+			document.getElementById('about').hidden = false;
+			stats = 1;
+		}else{
+			document.getElementById('about').hidden = true;
+			stats = 0;
+		};
+	};
+
+
+
+	function set_car(){
+		document.getElementById('animation').hidden = false;
+		document.getElementById('animation').innerHTML = '🚗';
+	};
+
+	function carAnimation(){
+		document.getElementById('animation').innerHTML = '💥';
+		setTimeout(() => document.getElementById('animation').hidden = true, 1000);
+		setTimeout(set_car, 4000);
+	};
+
+</script>
+
+
+	<body>
+		<!--Header-->
+		<header>
+			<a href="#" class="title">My bot API</a>
+			<p class="pal">|</p>
+			<p class="header_text">API to send Discord messages</p>
+			<p id="about_button" onclick="aboutClick()">About</p>
+		</header>
+
+		<!--About-->
+		<div id="about" hidden="true">
+			<p class="about_close" onclick="document.getElementById('about').hidden = true; stats = 0;">X</p>
+			<h2>About</h2>
+			<p class="about_text">
+				API for Discord on Node.js.<br>
+				The API sends messages via the webhook to the channel, you need a nickname and a message.<br><br>
+				<strong>Authors:</strong> api - <u>vladislaw2020#7649</u> <strong>|</strong> front-end - <u>HTTPs#3112</u>.
+			</p>
+		</div>
+
+		<!--Simp animation-->
+		<p id="animation" onclick="carAnimation()">🚗</p>
+
+
+		<!--Send form-->
+		<form name="dsend" class="send_form">
+			<h2><u>Username</u></h2>
+			<input class="name_input" name="username">
+			<h2><u>Message</u></h2>
+			<textarea class="text_input" name="msg"></textarea>
+			<br>
+			<input class="send_button" type="button" value="Send" onclick="send();">
+		</form>
+
+
+	</body>
+
+</html>

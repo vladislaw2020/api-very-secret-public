@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Msg send</title>
+   </head>
+   <script src = "/socket.io/socket.io.js"></script>
+   
+   <script>
+      var socket = io();
+	  function send(){
+		let msg = document.dsend.msg.value;
+		let uname = document.dsend.username.value;
+		let error = false;
+		socket.emit('uname', uname);
+		socket.emit('msg', msg);
+		socket.emit('send', 'send');
+		socket.on('error', function(data){
+			if(!error){
+				alert("Error! Can't send message.");
+				error = true;
+			}
+			return;
+		});
+		socket.on('msgempty', function(data){
+			if(!error){
+				alert("Error! Message is empty.");
+				error = true;
+			}
+			return;
+		});
+	  }
+	  
+   </script>
+   <body>
+	  <form name="dsend">
+		<h1>My bot API</h1>
+		<h2>Username</h2>
+		<input name="username">
+		<h2>Message</h2>
+		<textarea name="msg"></textarea>
+		<br>
+		<input type="button" value="Send" onclick="send();">
+	  </form>
+   </body>
+</html>
