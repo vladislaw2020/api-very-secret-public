@@ -37,17 +37,6 @@
 
 <!--For about button-->
 <script>
-	let stats = 0;
-	function aboutClick(){
-		if (stats == 0){
-			document.getElementById('about').hidden = false;
-			stats = 1;
-		}else{
-			document.getElementById('about').hidden = true;
-			stats = 0;
-		};
-	};
-
 	// Animation
 	function set_car(){
 		document.getElementById('animation').hidden = false;
@@ -73,8 +62,7 @@
 		</header>
 
 		<!--About-->
-		<div id="about" hidden="true">
-			<p class="about_close" onclick="document.getElementById('about').hidden = true; stats = 0;">X</p>
+		<div id="about">
 			<h2>About</h2>
 			<p class="about_text">
 				API for Discord on Node.js.<br>
