@@ -37,17 +37,6 @@
 
 <!--For about button-->
 <script>
-	let stats = 0;
-	function aboutClick(){
-		if (stats == 0){
-			document.getElementById('about').hidden = false;
-			stats = 1;
-		}else{
-			document.getElementById('about').hidden = true;
-			stats = 0;
-		};
-	};
-
 	// Animation
 	function set_car(){
 		document.getElementById('animation').hidden = false;
@@ -69,13 +58,10 @@
 			<a href="#" class="title">My bot API</a>
 			<p class="pal">|</p>
 			<p class="header_text">API to send Discord messages</p>
-			<p id="about_button" onclick="aboutClick()">About</p>
 		</header>
 
 		<!--About-->
-		<div id="about" hidden="true">
-			<p class="about_close" onclick="document.getElementById('about').hidden = true; stats = 0;">X</p>
-			<h2>About</h2>
+		<div id="about">
 			<p class="about_text">
 				API for Discord on Node.js.<br>
 				The API sends messages via the webhook to the channel, you need a nickname and a message.<br><br>

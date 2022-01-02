@@ -68,16 +68,15 @@ header a{
 /* Content */
 #about{
 	position: absolute;
-	margin-top: 10%;
-	margin-left: 35%;
+	margin-top: 90px;
+	left: 780px;
 	width: 315px;
 	height: 285px;
 	background: #333;
 	border: 1.5px solid white;
-	box-shadow: 0 0 18px #000;
+	box-shadow: 0 0 10px #000;
 	border-radius: 4px;
 	font-family: 'Consolas';
-	z-index: 10;
 }
 
 #about h2{
@@ -108,7 +107,7 @@ header a{
 .send_form{
 	position: relative;
 	margin-top: 90px;
-	margin-left: 0px;
+	margin-left: 35%;
 	width: 300px;
 	border-top: 2.5px solid #f63e3e;
 }
