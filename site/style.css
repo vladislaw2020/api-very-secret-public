@@ -53,16 +53,6 @@ header a{
 	user-select: none;
 }
 
-#about_button {
-	position: absolute;
-	right: 22px;
-	color: #fff4e0;
-	font-family: 'Hack';
-	font-size: 16px;
-	top: 1px;
-	cursor: pointer;
-	user-select: none;
-}
 
 
 /* Content */
